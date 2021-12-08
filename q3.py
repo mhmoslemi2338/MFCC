@@ -6,7 +6,6 @@ from scipy.fft import fft, fftfreq, fftshift
 from scipy.fftpack import idct
 import seaborn as sns
 
-
 def make_filter_bank(length, freq_l=50, freq_h=4000, N_filter=40):
     freq_l_mel = (2595 * np.log10(1 + freq_l / 700))         # Convert Hz to Mel
     freq_h_mel = (2595 * np.log10(1 + freq_h / 700))         # Convert Hz to Mel
@@ -28,7 +27,6 @@ def make_filter_bank(length, freq_l=50, freq_h=4000, N_filter=40):
 
 
 MFCC_all = []
-
 for index in range(1, 7):
 
     Fs, data = wavfile.read('data/S01_P0%d.wav' % index)
@@ -70,10 +68,7 @@ for i in range(1, len(MFCC_all)):
     MFCC = np.concatenate([MFCC, MFCC_all[i]])
 
 # MFCC -= (np.mean(MFCC, axis=0) )
-
-
 ########### save result #########
-
 xticks = np.int32(np.linspace(0, len(MFCC) - 1, 10)).tolist()
 xticklabels = np.linspace(0, len(MFCC), 10) * 0.015
 xticklabels = np.round(xticklabels + 0.15, 3).tolist()
