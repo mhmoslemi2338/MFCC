@@ -6,7 +6,5 @@
 *.ipynb
 /.ipynb_checkpoints
 autopep.sh
+/__*
 
-q1.py
-Question1_b.jpg
-Question1_a.jpg
