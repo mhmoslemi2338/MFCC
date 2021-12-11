@@ -4,6 +4,15 @@ import numpy as np
 from scipy.io import wavfile
 from scipy.fftpack import idct
 
+# This file is exaclty the same as the q3.py which we 
+# implemented the MFCC extractor so we do not put comment
+# for it.
+#
+# There is a tiny difference in the make_MFCC function which is
+# now we have an opion to concatenate the delta and delta_delta values
+# to the MFCC's , which declares with an boolean flag
+
+
 
 def make_filter_bank(length, freq_l=50, freq_h=4000, N_filter=40):
     freq_l_mel = (2595 * np.log10(1 + freq_l / 700))         # Convert Hz to Mel
